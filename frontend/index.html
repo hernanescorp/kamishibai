@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Kamishibai</title>
+</head>
+<body>
+
+    <h1>Mi Kamishibai</h1>
+
+    <button onclick="guardarCheck()">CHECK</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        async function guardarCheck() {
+            const respuesta = await fetch("/api/check", {
+                method: "POST"
+            });
+
+            document.getElementById("resultado").innerText =
+                respuesta.ok ? "CHECK guardado" : "Error al guardar";
+        }
+    </script>
+
+</body>
+</html>
