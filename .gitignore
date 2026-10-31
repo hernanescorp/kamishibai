@@ -1,4 +1,5 @@
-api/local.settings.json
-.env
 .venv/
+.env
+api/local.settings.json
+.azurite/
 __pycache__/
