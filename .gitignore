@@ -1,5 +1,9 @@
 .venv/
 .env
+.env.*
 api/local.settings.json
 .azurite/
 __pycache__/
+*.py[cod]
+
+.swa-publish/

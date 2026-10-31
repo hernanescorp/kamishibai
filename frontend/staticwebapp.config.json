@@ -1,0 +1,48 @@
+{
+  "routes": [
+    {
+      "route": "/login.html",
+      "allowedRoles": [
+        "anonymous"
+      ]
+    },
+    {
+      "route": "/acceso-denegado.html",
+      "allowedRoles": [
+        "anonymous"
+      ]
+    },
+    {
+      "route": "/.auth/login/aad",
+      "statusCode": 404
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": [
+        "propietario"
+      ]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": [
+        "propietario"
+      ]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "rewrite": "/login.html"
+    },
+    "403": {
+      "rewrite": "/acceso-denegado.html"
+    }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "same-origin"
+  },
+  "platform": {
+    "apiRuntime": "python:3.11"
+  }
+}

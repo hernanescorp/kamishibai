@@ -1,2 +1,2 @@
-azure-functions
-pyodbc
+azure-functions==1.25.0
+pyodbc==5.3.0
